@@ -24,7 +24,8 @@ const oAuth2Client = new google.auth.OAuth2(
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 // Hit the http://localhost:3002/send endpoint to send mail
-// http://localhost:3002/send is a GET request 
+// http://localhost:3002/send is a GET request
+// enter your email id as mentioned below
 
 app.get('/send', async (req, res) => {
   const accessToken = await oAuth2Client.getAccessToken();
@@ -62,6 +63,10 @@ app.get('/send', async (req, res) => {
 app.listen(3002, () => {
   console.log('Serving on port 3002')
 })
+
+
+
+
 
 
 
